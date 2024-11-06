@@ -1,0 +1,26 @@
+<button
+(click)="onSetToggleMenu()"
+class="bg-buttonColor p-1 md:w-[40px] md:h-[40px] flex justify-center items-center rounded-md self-start active:bg-shadowColor transition-colors absolute right-4 top-4">
+  <mat-icon aria-hidden="false" fontIcon="menu" class="md:text-[1.6rem]"></mat-icon>
+</button>
+
+<aside
+[ngClass]="{
+  'translate-x-[-250px] md:translate-x-[-300px]': !toggleMenu,
+  'translate-x-0': toggleMenu
+}"
+class="w-[250px] md:w-[300px] transition-all bg-detailsColor px-4 pt-2 shadow-sm shadow-shadowColor absolute top-0 bottom-0 left-0 z-10">
+
+  <h2 class="text-lg font-semibold text-center md:text-2xl">Menú</h2>
+  <hr >
+
+  <shared-buttons-burguer-menu> </shared-buttons-burguer-menu>
+
+
+  <div class="absolute bottom-[40px] left-[50%] translate-x-[-50%] w-[90%] text-center">
+    <hr >
+    <h2 class="text-xl font-semibold mt-2">Movie App</h2>
+  </div>
+
+</aside>
+
