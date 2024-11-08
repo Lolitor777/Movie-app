@@ -1,0 +1,15 @@
+<div class="w-full max-w-[800px] h-[40px] mx-auto bg-[#fff] flex justify-between items-center mt-8 rounded-full overflow-hidden px-4">
+  <input
+    type="text"
+    placeholder="Buscar películas"
+    name="search-box"
+    class="h-full w-[90%] outline-none text-backgroundColor"
+    (keyup.enter)="search()"
+    #txtTagInput
+  >
+
+  <div class="flex-1 flex justify-end" (click)="search()">
+    <mat-icon fontIcon="search" class="text-[#b8b6b6]"></mat-icon>
+  </div>
+</div>
+
