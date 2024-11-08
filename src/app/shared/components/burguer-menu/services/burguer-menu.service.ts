@@ -9,8 +9,6 @@ export class BurguerMenuService {
 
   setToggleMenu():void {
     this.toggleMenu = !this.toggleMenu;
-    console.log(this.toggleMenu);
-
   }
 
 }
