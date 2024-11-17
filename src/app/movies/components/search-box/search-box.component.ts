@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { MoviesService } from '../../services/movies.service';
 
 @Component({
   selector: 'movies-search-box',
@@ -6,13 +7,17 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class SearchBoxComponent {
 
+  constructor( private MoviesServices: MoviesService){}
+
   @ViewChild('txtTagInput')
   public searchValue!: ElementRef<HTMLInputElement>;
 
   search():void {
-    console.log( this.searchValue.nativeElement.value );
+
+    if(this.searchValue.nativeElement.value.length < 2 ) return;
+
+    this.MoviesServices.fetchMovies( this.searchValue.nativeElement.value );
 
     this.searchValue.nativeElement.value = '';
   }
-
 }

@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './movies/pages/home-page/home-page.component';
 import { MoviesModule } from './movies/movies.module';
-import { SideBarComponent } from './shared/components/side-bar/side-bar.component';
 import { SharedModule } from './shared/shared.module';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +16,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
     BrowserModule,
     AppRoutingModule,
     MoviesModule,
-    SharedModule
+    SharedModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()

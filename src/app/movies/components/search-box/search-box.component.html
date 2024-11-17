@@ -3,13 +3,13 @@
     type="text"
     placeholder="Buscar películas"
     name="search-box"
-    class="h-full w-[90%] outline-none text-backgroundColor"
+    class="h-full w-[90%] outline-none text-backgroundColor font-semibold"
     (keyup.enter)="search()"
     #txtTagInput
   >
 
-  <div class="flex-1 flex justify-end" (click)="search()">
-    <mat-icon fontIcon="search" class="text-[#b8b6b6]"></mat-icon>
+  <div class="flex-1 flex justify-end cursor-pointer" (click)="search()">
+    <mat-icon fontIcon="search" class="text-[#b8b6b6] xl:hover:text-buttonColor"></mat-icon>
   </div>
 </div>
 
