@@ -1,0 +1,29 @@
+<div class="mt-[2.5em] md:mt-[4em]">
+
+  <div *ngIf="search">
+    <h2 class="font-semibold text-buttonColor text-2xl md:text-3xl mb-1">{{ search }}</h2>
+    <hr class="text-shadowColor">
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-5 mt-4 place-content-center gap-4">
+    <div *ngFor="let movie of movieList" class="flex flex-col items-center  xl:hover:cursor-pointer hover:bg-shadowColor w-[160px] h-fit p-2 rounded-md">
+
+      <figure class="w-[150px] h-[225px]" *ngIf="movie.poster_path">
+        <img
+        [src]="'https://image.tmdb.org/t/p/w200' + movie.poster_path "
+        [alt]="movie.title"
+        class="w-full h-full">
+      </figure>
+
+      <figure class="w-[150px] h-[225px]" *ngIf="!movie.poster_path">
+        <img
+        src="images/noAvailable.jpg"
+        alt="Imágen no disponible"
+        class="w-full h-full object-cover object-center">
+      </figure>
+
+      <h3 class="text-center">{{ movie.title }}</h3>
+    </div>
+  </div>
+
+</div>
